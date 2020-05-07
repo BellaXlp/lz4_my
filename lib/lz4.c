@@ -1273,6 +1273,9 @@ int LZ4_compress_fast(const char* source, char* dest, int inputSize, int maxOutp
 int LZ4_compress_default(const char* src, char* dst, int srcSize, int maxOutputSize)
 {
 	printf("---------- xlp --------\n");
+	printf("---------- xlp 2--------\n");
+	srcSize += 100;
+	srcSize -= 100;
     return LZ4_compress_fast(src, dst, srcSize, maxOutputSize, 1);
 }
 
