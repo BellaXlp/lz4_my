@@ -44,6 +44,8 @@
 #  define LZ4_HEAPMODE 0
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
 /*
  * ACCELERATION_DEFAULT :
  * Select "acceleration" for LZ4_compress_fast() when parameter value <= 0
@@ -1270,6 +1272,10 @@ int LZ4_compress_fast(const char* source, char* dest, int inputSize, int maxOutp
 
 int LZ4_compress_default(const char* src, char* dst, int srcSize, int maxOutputSize)
 {
+	printf("---------- xlp --------\n");
+	printf("---------- xlp 2--------\n");
+	srcSize += 100;
+	srcSize -= 100;
     return LZ4_compress_fast(src, dst, srcSize, maxOutputSize, 1);
 }
 
